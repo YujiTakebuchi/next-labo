@@ -10,6 +10,7 @@ specifiers:
   next: 13.1.6
   react: 18.2.0
   react-dom: 18.2.0
+  splide-nextjs: ^2.4.23
   typescript: 4.9.5
 
 dependencies:
@@ -22,6 +23,7 @@ dependencies:
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  splide-nextjs: 2.4.23
   typescript: 4.9.5
 
 packages:
@@ -1921,6 +1923,10 @@ packages:
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /splide-nextjs/2.4.23:
+    resolution: {integrity: sha512-LkHmTNiWq7HIPoziALpk4NEfkLwyB86dWJYMDWV3Y0fZDapEfBHtdYaxZ/P61iZHsf29kuJtrW4WXWFIPa96Jw==}
     dev: false
 
   /stop-iteration-iterator/1.0.0:
