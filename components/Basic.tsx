@@ -1,7 +1,8 @@
+import React from "react";
 import { Splide, SplideSlide } from "splide-nextjs/react-splide";
 import "splide-nextjs/splide/dist/css/themes/splide-sea-green.min.css";
 
-const Basic = () => {
+const Basic: React.FC = () => {
   return (
     <Splide>
       <SplideSlide>
