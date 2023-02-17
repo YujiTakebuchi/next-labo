@@ -7,6 +7,7 @@ specifiers:
   '@types/react-dom': 18.0.10
   eslint: 8.33.0
   eslint-config-next: 13.1.6
+  lottie-web: ^5.10.2
   next: 13.1.6
   react: 18.2.0
   react-dom: 18.2.0
@@ -21,6 +22,7 @@ dependencies:
   '@types/react-dom': 18.0.10
   eslint: 8.33.0
   eslint-config-next: 13.1.6_4vsywjlpuriuw3tl5oq6zy5a64
+  lottie-web: 5.10.2
   next: 13.1.6_5mhhrw5dq6gnbuirj2awdzvyuu
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1550,6 +1552,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: false
+
+  /lottie-web/5.10.2:
+    resolution: {integrity: sha512-d0PFIGiwuMsJYaF4uPo+qG8dEorlI+xFI2zrrFtE1bGO4WoLIz+NjremxEq1swpR7juR10aeOtmNh3d6G3ub0A==}
     dev: false
 
   /lru-cache/6.0.0:
