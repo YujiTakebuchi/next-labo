@@ -14,11 +14,12 @@ const LottieRef = () => {
       const animation = lottie.loadAnimation({
         container: ref.current,
         renderer: "svg",
-        loop: true,
-        autoplay: true,
+        loop: false,
+        autoplay: false,
         // path to your animation file, place it inside public folder
         path: "/lottie/data.json",
       });
+      animation.play();
 
       return () => animation.destroy();
     }
