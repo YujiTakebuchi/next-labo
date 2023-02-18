@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
@@ -27,6 +26,18 @@ export default function Home() {
               sliders <span>-&gt;</span>
             </h2>
             <p className={inter.className}>スライダー機能等</p>
+          </Link>
+
+          <Link
+            href="/lottie"
+            className={styles.card}
+            target="_self"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              lottie <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>アニメーションライブラリLottie</p>
           </Link>
         </div>
       </main>
