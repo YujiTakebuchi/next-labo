@@ -1,11 +1,5 @@
 import { css } from "@emotion/react";
-import React, {
-  cloneElement,
-  DetailedReactHTMLElement,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { cloneElement, useEffect, useRef, useState } from "react";
 import {
   attachScrollEventListener,
   detachScrollEventListener,
@@ -14,7 +8,7 @@ import styles from "./FixOnAvailable.module.scss";
 
 type Props = {
   fixedStyleObjectList: Array<any>;
-  children: DetailedReactHTMLElement<any, any>;
+  children: any;
 };
 
 const FixOnAvailable: React.FC<Props> = (props: Props) => {

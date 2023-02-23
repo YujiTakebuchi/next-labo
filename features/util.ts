@@ -1,3 +1,12 @@
+import variable from "../styles/var.module.scss";
+
+export const responsiveCSS = (
+  property: string,
+  val: string,
+  valSp: string,
+  bp: string = variable.breakpoint
+) => `${property}: ${val};@media (max-width: ${bp}px) {${property}: ${valSp};}`;
+
 interface ParamObject {
   capture?: boolean;
   once?: boolean;
@@ -15,6 +24,7 @@ export const attachScrollEventListener = (
   elem.addEventListener("mousewheel", listener, options);
   elem.addEventListener("touchmove", listener, options);
 };
+
 export const detachScrollEventListener = (
   elem: any,
   listener: ListenerFunc,
