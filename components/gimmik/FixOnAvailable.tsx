@@ -1,21 +1,23 @@
 import { css } from "@emotion/react";
-import { cloneElement, ReactNode, useEffect, useRef, useState } from "react";
+import React, {
+  cloneElement,
+  DetailedReactHTMLElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   attachScrollEventListener,
   detachScrollEventListener,
 } from "../../features/util";
 import styles from "./FixOnAvailable.module.scss";
 
-/**
- * 要素が画面に収まった時に中の要素を固定表示するコンポーネント
- * @param {boolean} fixedStyleObjectList position: fixedになる要素に当てるemotion
- * @param {ReactNode} children 子要素
- * @return {ReactNode} 要素が画面に収まった時に中の要素を固定表示するコンポーネント
- */
-export default function FixOnAvailable({
-  fixedStyleObjectList = [],
-  children,
-}) {
+type Props = {
+  fixedStyleObjectList: Array<any>;
+  children: DetailedReactHTMLElement<any, any>;
+};
+
+const FixOnAvailable: React.FC<Props> = (props: Props) => {
   const ref = useRef(null);
   const [isInFixedArea, setIsInFixedArea] = useState(false);
   const [scrollAmountByWindowTop, setScrollAmountByWindowTop] = useState(0);
@@ -55,16 +57,18 @@ export default function FixOnAvailable({
         css={
           isInFixedArea
             ? css`
-                ${fixedStyleObjectList.map((so) => so)}
+                ${props.fixedStyleObjectList.map((so) => so)}
               `
             : ""
         }
       >
-        {cloneElement(children, {
+        {cloneElement(props.children, {
           isInFixedArea,
           scrollAmount: scrollAmountByWindowTop,
         })}
       </div>
     </div>
   );
-}
+};
+
+export default FixOnAvailable;
