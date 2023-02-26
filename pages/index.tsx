@@ -15,6 +15,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <div className={styles.description}>
+          <h2>演出</h2>
+          <p>
+            サイトに動きを持たせるための演出を試してる
+            <br />
+            ディレクトリはgimmik
+          </p>
+        </div>
+        <div className={styles.grid}>
+          <Link
+            href="/gimmik/fixedSlide"
+            className={styles.card}
+            target="_self"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              固定スクロールスライド <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>強く見せたい項目に</p>
+          </Link>
+        </div>
+        <div className={styles.description}>
+          <h2>ライブラリー群</h2>
+          <p>next関連やそれ以外のライブラリを試してる</p>
+        </div>
         <div className={styles.grid}>
           <Link
             href="/slider"
