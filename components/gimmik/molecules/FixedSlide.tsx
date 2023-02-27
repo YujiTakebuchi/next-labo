@@ -2,15 +2,20 @@
 // FixedSlide COMP
 // 固定スクロールアニメーションのスライドコンポーネント
 /*===================================*/
+import React, { ReactNode } from "react";
 import styles from "./FixedSlide.module.scss";
+
+type Props = {
+  isDisplayed: boolean;
+  children: any;
+};
 
 /**
  * 固定スクロールアニメーションのスライドコンポーネント
- * @param {boolean} isDisplayed 現在表示されているスライドかどうかのフラグ
- * @param {object} children 子要素
+ * @param {Props} props 現在表示されているスライドかどうかのフラグ
  * @return {import("react").ReactElement} 固定スクロールアニメーションのスライドコンポーネント
  */
-export default function FixedSlide({ isDisplayed, children }) {
+export default function FixedSlide(props: Props): JSX.Element {
   return (
     <div
       className={`${styles["fixed-slide"]}`}
@@ -21,10 +26,10 @@ export default function FixedSlide({ isDisplayed, children }) {
     >
       <div
         className={`${styles["fixed-slide__content"]} ${
-          isDisplayed ? styles["displayed"] : ""
+          props.isDisplayed ? styles["displayed"] : ""
         }`}
       >
-        {children}
+        {props.children}
       </div>
     </div>
   );
