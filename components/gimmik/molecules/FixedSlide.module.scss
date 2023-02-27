@@ -1,0 +1,30 @@
+/*===================================*/
+// FixedSlide STYLE
+// 職務内容コンポーネントのスタイル
+/*===================================*/
+@use "../../styles/_var.module";
+
+.fixed-slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  &__content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    // TODO:later CSSinJSで動的にしたい
+    height: 100%;
+    opacity: 0;
+    // transition: opacity 200ms linear;
+    &.displayed {
+      opacity: 1;
+    }
+    // 中のコンテンツ中央寄せ
+    > * {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
