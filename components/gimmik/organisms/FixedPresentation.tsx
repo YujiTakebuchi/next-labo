@@ -21,7 +21,7 @@ import { responsiveCSS } from "../../../features/emotionUtil";
 import { JsxElement } from "typescript";
 
 type FixedPresentationProps = {
-  slides: Array<ReactElement>;
+  slides: Array<JSX.Element>;
   isInFixedArea: boolean;
 };
 

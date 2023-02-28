@@ -1,4 +1,6 @@
 import FixOnAvailable from "@/components/gimmik/FixOnAvailable";
+import FixedSlide from "@/components/gimmik/molecules/FixedSlide";
+import FixedPresentation from "@/components/gimmik/organisms/FixedPresentation";
 import Reducer from "@/components/react-hooks/Reducer";
 import { responsiveCSS } from "@/features/util";
 
@@ -8,9 +10,7 @@ export default function Home() {
       <FixOnAvailable
         fixedStyleObjectList={[responsiveCSS("width", "100%", "100%")]}
       >
-        <div
-          style={{ width: "100%", height: "200px", backgroundColor: "#ff00ff" }}
-        />
+        <FixedPresentation slides={[<FixedSlide />]}></FixedPresentation>
       </FixOnAvailable>
     </div>
   );

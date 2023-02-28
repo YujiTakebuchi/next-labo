@@ -8,7 +8,7 @@ import styles from "./FixOnAvailable.module.scss";
 
 type Props = {
   fixedStyleObjectList: Array<any>;
-  children: any;
+  children: JSX.Element;
 };
 
 const FixOnAvailable: React.FC<Props> = (props: Props) => {
