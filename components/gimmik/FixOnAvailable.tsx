@@ -7,7 +7,7 @@ import {
 import styles from "./FixOnAvailable.module.scss";
 
 type Props = {
-  fixedStyleObjectList: Array<any>;
+  fixedStyleObjectList: Array<string>;
   children: JSX.Element;
 };
 
@@ -48,13 +48,9 @@ const FixOnAvailable: React.FC<Props> = (props: Props) => {
     <div className={`${styles["fix-on-available"]}`} ref={ref}>
       <div
         className={`${styles["fix-on-available__content"]} ${styles["relative"]}`}
-        css={
-          isInFixedArea
-            ? css`
-                ${props.fixedStyleObjectList.map((so) => so)}
-              `
-            : ""
-        }
+        css={css`
+          ${props.fixedStyleObjectList.map((so) => so)}
+        `}
       >
         {cloneElement(props.children, {
           isInFixedArea,

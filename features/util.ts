@@ -3,7 +3,7 @@ import variable from "../styles/var.module.scss";
 export const responsiveCSS = (
   property: string,
   val: string,
-  valSp: string,
+  valSp?: string,
   bp: string = variable.breakpoint
 ) => `${property}: ${val};@media (max-width: ${bp}px) {${property}: ${valSp};}`;
 
