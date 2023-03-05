@@ -1,8 +1,6 @@
 import FixedSlide01 from "@/components/gimmik/fixedSlide/FixedSlide01";
 import FixOnAvailable from "@/components/gimmik/FixOnAvailable";
-import FixedSlide from "@/components/gimmik/molecules/FixedSlide";
 import FixedPresentation from "@/components/gimmik/organisms/FixedPresentation";
-import Reducer from "@/components/react-hooks/Reducer";
 import { responsiveCSS } from "@/features/util";
 
 export default function Home() {
