@@ -7,7 +7,6 @@ import styles from "./FixedSlide.module.scss";
 
 type Props = {
   isDisplayed: boolean;
-  fixedStyleObjectList: Array<string>;
   children: any;
 };
 
@@ -18,13 +17,7 @@ type Props = {
  */
 export default function FixedSlide(props: Props): JSX.Element {
   return (
-    <div
-      className={`${styles["fixed-slide"]}`}
-      // style={{
-      //   width: "100%",
-      //   height: "100vh",
-      // }}
-    >
+    <div className={`${styles["fixed-slide"]}`}>
       <div
         className={`${styles["fixed-slide__content"]} ${
           props.isDisplayed ? styles["displayed"] : ""

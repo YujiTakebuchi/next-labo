@@ -4,21 +4,16 @@
 /*===================================*/
 import styles from "./FixedSlide01.module.scss";
 
-/**
- * 固定スクロールアニメーションのアニメーションコンポーネント01
- * @param {object} progress アニメーション進行度、0 ~ 100
- * @return {import("react").ReactElement} 固定スクロールアニメーションのアニメーションコンポーネント01
- */
-export default function FixedSlide01({
-  phase,
-  isDisplayed,
-  isInFixedArea,
-  fixedStyleObjectList,
-}) {
+type Props = {
+  fixedStyleObjectList: Array<string>;
+  children: JSX.Element;
+};
+
+export default function FixedSlide01(props: Props): JSX.Element {
   return (
     <div
       className={`${styles["fixed-slide-01"]}`}
-      css={fixedStyleObjectList.map((so) => so)}
+      css={props.fixedStyleObjectList.map((so) => so)}
     ></div>
   );
 }
