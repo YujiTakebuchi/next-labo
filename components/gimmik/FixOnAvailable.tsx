@@ -11,6 +11,7 @@ type Props = {
   children: JSX.Element;
 };
 
+// 要素が画面ないに収まった時に固定表示に切り替えるコンポーネント(要素の上端が画面上端より上に来て要素下端が画面下端より下の時、つまり要素が画面を埋め尽くしてる時)
 const FixOnAvailable: React.FC<Props> = (props: Props) => {
   const ref = useRef(null);
   const [isInFixedArea, setIsInFixedArea] = useState(false);
