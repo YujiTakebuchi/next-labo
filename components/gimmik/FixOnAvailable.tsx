@@ -27,8 +27,10 @@ const FixOnAvailable: React.FC<Props> = (props: Props) => {
     const scrollTarget: HTMLElement | any = ref.current;
     const positionTarget = scrollTarget.children[0];
     if (
-      scrollTarget.getBoundingClientRect().top <= 0 &&
-      scrollTarget.getBoundingClientRect().bottom - window.innerHeight > 0
+      scrollTarget.getBoundingClientRect().top <= 0
+      // &&
+      // scrollTarget.getBoundingClientRect().bottom - window.innerHeight > 0
+      // FIXME: 検証用にスクロール量が閾値を超えた時に画面固定になるようにしている
     ) {
       isInFixedArea || setIsInFixedArea(true);
       scrollTarget.style.height = `${positionTarget.clientHeight}px`;
