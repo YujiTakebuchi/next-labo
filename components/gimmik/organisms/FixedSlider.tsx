@@ -7,39 +7,42 @@ import React, { cloneElement, useEffect, useRef, useState } from "react";
 import {
   attachScrollEventListener,
   detachScrollEventListener,
-} from "../../features/util";
-import FixedSlide from "../_molecules/FixedSlide";
+} from "../../../features/util";
+import FixedSlide from "../molecules/FixedSlide";
 
-/**
- * 固定スクロールアニメーションのスライド管理用コンポーネント
- * @param {Array.<import("react").ReactElement>} slides
- * @param {boolean} isInFixedArea 固定エリアに入ったかどうかのフラグ
- * @return {import("react").ReactElement} 固定スクロールアニメーションのスライド管理用コンポーネント
- */
+type Props = {
+  slides: Array<JSX.Element>;
+  isInFixedArea: boolean;
+  scrollAmount: number;
+  children: JSX.Element;
+};
+
 export default function FixedSlider({
   slides = [<></>],
   isInFixedArea = false,
   scrollAmount = 0,
   children,
-}) {
+}: Props) {
   const [progress, setProgress] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideRef = useRef(null);
+  const slideRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    // 変数
-    if (currentSlide !== 0 && slideRef.current.children[0].scrollTop === 0)
-      slideRef.current.children[0].scrollTop += 1;
-    if (
-      currentSlide !== slidersNum + 1 &&
-      slideRef.current.children[0].scrollTop ===
-        window.innerHeight * slidersNum + 2
-    )
-      slideRef.current.children[0].scrollTop -= 1;
+    if (slideRef.current !== null) {
+      // 変数
+      if (currentSlide !== 0 && slideRef.current.children[0].scrollTop === 0)
+        slideRef.current.children[0].scrollTop += 1;
+      if (
+        currentSlide !== slidersNum + 1 &&
+        slideRef.current.children[0].scrollTop ===
+          window.innerHeight * slidersNum + 2
+      )
+        slideRef.current.children[0].scrollTop -= 1;
+    }
 
-    attachScrollEventListener(document, [handleScroll, { passive: true }]);
+    attachScrollEventListener(document, handleScroll, { passive: true });
     return () => {
       // 再描画される前にイベントリスナをデタッチしてイベントが重複しないようにする
-      detachScrollEventListener(document, [handleScroll, { passive: true }]);
+      detachScrollEventListener(document, handleScroll, { passive: true });
     };
   });
 
@@ -73,7 +76,7 @@ export default function FixedSlider({
   };
 
   // 移動系
-  const moveCurrentSlide = (nextNum) => {
+  const moveCurrentSlide = (nextNum: number) => {
     if (nextNum === 0) {
       setProgress(0);
       setCurrentSlide(0);
@@ -85,8 +88,9 @@ export default function FixedSlider({
   };
 
   // ナビゲーションのonClick関数
-  const handleNavClick = (slideN) => {
-    slideRef.current.children[0].scrollTop = window.innerHeight * slideN + 1;
+  const handleNavClick = (slideN: number) => {
+    if (slideRef.current !== null)
+      slideRef.current.children[0].scrollTop = window.innerHeight * slideN + 1;
   };
 
   return (
@@ -102,10 +106,11 @@ export default function FixedSlider({
           return (
             <FixedSlide
               key={idx}
-              currentSlide={currentSlide}
-              moveCurrentSlide={moveCurrentSlide}
+              // TODO: 固定スライダー用のスライドコンポーネント作成
+              // currentSlide={currentSlide}
+              // moveCurrentSlide={moveCurrentSlide}
               isDisplayed={idx === currentSlide}
-              progress={progress}
+              // progress={progress}
             >
               {stateElement}
             </FixedSlide>
