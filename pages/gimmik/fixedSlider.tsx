@@ -1,4 +1,5 @@
 import FixedSlide01 from "@/components/gimmik/fixedSlide/FixedSlide01";
+import FixedSliderSlide01 from "@/components/gimmik/fixedSlide/FixedSliderSlide01";
 import FixOnAvailable from "@/components/gimmik/FixOnAvailable";
 import FixedSlider from "@/components/gimmik/organisms/FixedSlider";
 import { responsiveCSS } from "@/features/util";
@@ -13,8 +14,14 @@ export default function Home() {
       <FixOnAvailable fixedStyleObjectList={slideStyleList}>
         <FixedSlider
           slides={[
-            <FixedSlide01 fixedStyleObjectList={slideStyleList} />,
-            <FixedSlide01 fixedStyleObjectList={slideStyleList} />,
+            <FixedSliderSlide01
+              fixedStyleObjectList={slideStyleList}
+              color="blue"
+            />,
+            <FixedSliderSlide01
+              fixedStyleObjectList={slideStyleList}
+              color="red"
+            />,
           ]}
         ></FixedSlider>
       </FixOnAvailable>
