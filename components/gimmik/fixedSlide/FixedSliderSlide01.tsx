@@ -4,12 +4,14 @@
 /*===================================*/
 import styles from "./FixedSliderSlide01.module.scss";
 
-/**
- * 固定スクロールアニメーションのアニメーションコンポーネント01
- * @param {object} progress アニメーション進行度、0 ~ 100
- * @return {import("react").ReactElement} 固定スクロールアニメーションのアニメーションコンポーネント01
- */
-export default function FixedSliderSlide01({ progress, color }) {
+type Props = {
+  progress: number;
+  color: string;
+};
+export default function FixedSliderSlide01({
+  progress,
+  color,
+}: Props): JSX.Element {
   return (
     <div
       className={`${styles["role-first"]}`}
