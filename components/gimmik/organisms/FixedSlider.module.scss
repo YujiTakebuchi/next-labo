@@ -2,7 +2,7 @@
 // FixedSlider STYLE
 // ロゴエリアコンポーネントのスタイル
 /*===================================*/
-@use "../../styles/_var.module";
+@use "../../../styles/var.module";
 
 .fixed-slider {
   position: relative;
@@ -23,7 +23,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: var.$c-base;
+      background-color: black;
       opacity: 0.3;
       transition: transform 400ms var.$easeOutCirc,
         opacity 400ms var.$easeOutCirc;
