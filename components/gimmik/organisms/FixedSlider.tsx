@@ -104,14 +104,7 @@ export default function FixedSlider({
             }
           );
           return (
-            <FixedSlide
-              key={idx}
-              // TODO: 固定スライダー用のスライドコンポーネント作成
-              // currentSlide={currentSlide}
-              // moveCurrentSlide={moveCurrentSlide}
-              isDisplayed={idx === currentSlide}
-              // progress={progress}
-            >
+            <FixedSlide key={idx} isDisplayed={idx === currentSlide}>
               {stateElement}
             </FixedSlide>
           );
