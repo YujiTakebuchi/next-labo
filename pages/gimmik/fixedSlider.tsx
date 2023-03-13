@@ -10,7 +10,7 @@ export default function Home() {
     responsiveCSS("height", "100vh"),
   ];
   return (
-    <div style={{ padding: "2000px 0" }}>
+    <div style={{ padding: "4000px 0" }}>
       <FixOnAvailable fixedStyleObjectList={slideStyleList}>
         <FixedSlider
           slides={[
