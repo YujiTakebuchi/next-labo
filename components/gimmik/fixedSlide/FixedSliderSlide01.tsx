@@ -14,7 +14,6 @@ type Props = {
 export default function FixedSliderSlide01({
   progress,
   fixedStyleObjectList,
-  slidesLength,
   color,
 }: Props): JSX.Element {
   return (
@@ -31,7 +30,7 @@ export default function FixedSliderSlide01({
       ></div>
       <div
         className={`${styles["fixed-slider-slide-01__bary"]}`}
-        style={{ top: `${progress / slidesLength}%` }}
+        style={{ top: `${progress}%` }}
       ></div>
     </div>
   );

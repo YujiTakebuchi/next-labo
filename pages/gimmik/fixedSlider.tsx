@@ -12,6 +12,8 @@ export default function Home() {
   const slides = [
     <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="blue" />,
     <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="red" />,
+    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="green" />,
+    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="yellow" />,
   ];
   return (
     <div style={{ padding: "9000px 0" }}>
