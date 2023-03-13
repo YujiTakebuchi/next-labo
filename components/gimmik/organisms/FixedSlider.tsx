@@ -80,8 +80,9 @@ export default function FixedSlider({
     if (nextNum === 0) {
       setProgress(0);
       setCurrentSlide(0);
-    } else if (nextNum === slides.length) {
+    } else if (nextNum >= slidersNum) {
       setProgress(0);
+      setCurrentSlide(slidersNum);
     } else {
       setCurrentSlide(nextNum);
     }

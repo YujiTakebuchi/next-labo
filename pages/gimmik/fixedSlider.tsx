@@ -9,21 +9,14 @@ export default function Home() {
     responsiveCSS("width", "100%", "100%"),
     responsiveCSS("height", "100vh"),
   ];
+  const slides = [
+    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="blue" />,
+    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="red" />,
+  ];
   return (
-    <div style={{ padding: "4000px 0" }}>
+    <div style={{ padding: "9000px 0" }}>
       <FixOnAvailable fixedStyleObjectList={slideStyleList}>
-        <FixedSlider
-          slides={[
-            <FixedSliderSlide01
-              fixedStyleObjectList={slideStyleList}
-              color="blue"
-            />,
-            <FixedSliderSlide01
-              fixedStyleObjectList={slideStyleList}
-              color="red"
-            />,
-          ]}
-        ></FixedSlider>
+        <FixedSlider slides={slides}></FixedSlider>
       </FixOnAvailable>
     </div>
   );
