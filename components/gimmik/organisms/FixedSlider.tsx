@@ -55,7 +55,7 @@ export default function FixedSlider({
     const progressTo = Math.floor(progressPx / progressMax);
     const progressRatio =
       ((progressPx - progressMax * progressTo) / progressMax) * 100;
-    if (isInFixedArea) {
+    if (isInFixedArea && progressPx < progressMax * (slidersNum + 1)) {
       if (Math.abs(currentSlide - progressTo) > 1) {
         // ワープ
         setProgress(0);
