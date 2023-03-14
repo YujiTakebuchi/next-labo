@@ -1,0 +1,19 @@
+/*===================================*/
+// TagListItem STYLE
+// タグのアイテムとなるコンポーネントのスタイル
+/*===================================*/
+@import "../../styles/var.module.scss";
+
+.fix-on-available {
+  &__content {
+    position: relative;
+    width: 100%;
+    &.fixed {
+      position: fixed;
+      top: 0;
+    }
+    &.relative {
+      position: relative;
+    }
+  }
+}

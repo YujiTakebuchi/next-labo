@@ -1,0 +1,27 @@
+/*===================================*/
+// RoleFirst STYLE
+// 固定スクロールアニメーションのアニメーションコンポーネント01のスタイル
+/*===================================*/
+@use "../../../styles/var.module";
+
+.fixed-slider-slide-01 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &__barx,
+  &__bary {
+    position: absolute;
+  }
+  &__barx {
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background-color: black;
+  }
+  &__bary {
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+  }
+}
