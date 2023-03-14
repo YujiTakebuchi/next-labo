@@ -13,9 +13,10 @@ export default function Home() {
       <FixOnAvailable fixedStyleObjectList={slideStyleList}>
         <FixedPresentation
           slides={[
-            <FixedSlide01 fixedStyleObjectList={slideStyleList} />,
-            <FixedSlide01 fixedStyleObjectList={slideStyleList} />,
+            <FixedSlide01 key={"s1"} fixedStyleObjectList={slideStyleList} />,
+            <FixedSlide01 key={"s2"} fixedStyleObjectList={slideStyleList} />,
           ]}
+          isInFixedArea={undefined}
         ></FixedPresentation>
       </FixOnAvailable>
     </div>

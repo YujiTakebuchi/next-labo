@@ -12,16 +12,14 @@ import FixedSlide from "../molecules/FixedSlide";
 
 type Props = {
   slides: Array<JSX.Element>;
-  isInFixedArea: boolean;
-  scrollAmount: number;
-  children: JSX.Element;
+  isInFixedArea: boolean | undefined;
+  scrollAmount: number | undefined;
 };
 
 export default function FixedSlider({
   slides = [<></>],
   isInFixedArea = false,
   scrollAmount = 0,
-  children,
 }: Props) {
   const [progress, setProgress] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);

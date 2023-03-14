@@ -12,7 +12,7 @@ import { css } from "@emotion/react";
 import { responsiveCSS } from "../../../features/emotionUtil";
 
 type FixedSliderControllerProps = {
-  isInFixedArea: boolean;
+  isInFixedArea: boolean | undefined;
   scrollDir: { current: number };
   slideStatus: { phase: number; slide: number };
   setSlideStatus: Function;

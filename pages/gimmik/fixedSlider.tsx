@@ -10,15 +10,39 @@ export default function Home() {
     responsiveCSS("height", "100vh"),
   ];
   const slides = [
-    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="blue" />,
-    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="red" />,
-    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="green" />,
-    <FixedSliderSlide01 fixedStyleObjectList={slideStyleList} color="yellow" />,
+    <FixedSliderSlide01
+      key={"s1"}
+      progress={undefined}
+      fixedStyleObjectList={slideStyleList}
+      color="blue"
+    />,
+    <FixedSliderSlide01
+      key={"s2"}
+      progress={undefined}
+      fixedStyleObjectList={slideStyleList}
+      color="red"
+    />,
+    <FixedSliderSlide01
+      key={"s3"}
+      progress={undefined}
+      fixedStyleObjectList={slideStyleList}
+      color="green"
+    />,
+    <FixedSliderSlide01
+      key={"s4"}
+      progress={undefined}
+      fixedStyleObjectList={slideStyleList}
+      color="yellow"
+    />,
   ];
   return (
     <div style={{ padding: "9000px 0" }}>
       <FixOnAvailable fixedStyleObjectList={slideStyleList}>
-        <FixedSlider slides={slides}></FixedSlider>
+        <FixedSlider
+          slides={slides}
+          isInFixedArea={undefined}
+          scrollAmount={undefined}
+        />
       </FixOnAvailable>
     </div>
   );

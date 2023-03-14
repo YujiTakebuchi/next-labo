@@ -6,7 +6,6 @@ import styles from "./FixedSlide01.module.scss";
 
 type Props = {
   fixedStyleObjectList: Array<string>;
-  children: JSX.Element;
 };
 
 export default function FixedSlide01(props: Props): JSX.Element {
