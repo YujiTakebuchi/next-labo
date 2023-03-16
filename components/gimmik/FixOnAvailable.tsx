@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import React, { cloneElement, useEffect, useRef, useState } from "react";
 import {
   attachScrollEventListener,
@@ -8,6 +8,7 @@ import styles from "./FixOnAvailable.module.scss";
 
 type Props = {
   fixedStyleObjectList: Array<string>;
+  cssOverrides: SerializedStyles;
   children: JSX.Element;
 };
 
@@ -31,13 +32,11 @@ const FixOnAvailable: React.FC<Props> = (props: Props) => {
       scrollTarget.getBoundingClientRect().bottom - window.innerHeight > 0
     ) {
       isInFixedArea || setIsInFixedArea(true);
-      scrollTarget.style.height = `${positionTarget.clientHeight}px`;
       positionTarget.style.width = `${scrollTarget.clientWidth}px`;
       positionTarget.classList.remove(`${styles["relative"]}`);
       positionTarget.classList.add(`${styles["fixed"]}`);
     } else {
       isInFixedArea && setIsInFixedArea(false);
-      scrollTarget.style.height = "auto";
       positionTarget.style.width = "100%";
       positionTarget.classList.remove(`${styles["fixed"]}`);
       positionTarget.classList.add(`${styles["relative"]}`);
@@ -46,7 +45,11 @@ const FixOnAvailable: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className={`${styles["fix-on-available"]}`} ref={ref}>
+    <div
+      className={`${styles["fix-on-available"]}`}
+      ref={ref}
+      css={props.cssOverrides}
+    >
       <div
         className={`${styles["fix-on-available__content"]} ${styles["relative"]}`}
         css={css`

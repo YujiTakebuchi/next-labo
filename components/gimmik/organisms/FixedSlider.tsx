@@ -17,6 +17,7 @@ import {
 } from "../../../features/util";
 import FixedSlide from "../molecules/FixedSlide";
 import { css } from "@emotion/react";
+import { useWindowSize } from "@/hooks/windowHooks";
 
 type Props = {
   slides: Array<JSX.Element>;

@@ -3,11 +3,13 @@ import FixedSliderSlide01 from "@/components/gimmik/fixedSlide/FixedSliderSlide0
 import FixOnAvailable from "@/components/gimmik/FixOnAvailable";
 import FixedSlider from "@/components/gimmik/organisms/FixedSlider";
 import { responsiveCSS } from "@/features/util";
+import { useWindowSize } from "@/hooks/windowHooks";
+import { css } from "@emotion/react";
 
 export default function Home() {
+  const [width, height] = useWindowSize();
   const slideStyleList: Array<string> = [
     responsiveCSS("width", "100%", "100%"),
-    responsiveCSS("height", "100vh"),
   ];
   const slides = [
     <FixedSliderSlide01
@@ -37,7 +39,12 @@ export default function Home() {
   ];
   return (
     <div style={{ padding: "9000px 0" }}>
-      <FixOnAvailable fixedStyleObjectList={slideStyleList}>
+      <FixOnAvailable
+        fixedStyleObjectList={slideStyleList}
+        cssOverrides={css`
+          ${responsiveCSS("height", `${height * (slides.length + 1) ?? 0}px`)}
+        `}
+      >
         <FixedSlider
           slides={slides}
           isInFixedArea={undefined}
