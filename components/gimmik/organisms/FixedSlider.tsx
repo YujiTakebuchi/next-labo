@@ -7,8 +7,10 @@ import React, { cloneElement, useEffect, useRef, useState } from "react";
 import {
   attachScrollEventListener,
   detachScrollEventListener,
+  responsiveCSS,
 } from "../../../features/util";
 import FixedSlide from "../molecules/FixedSlide";
+import { css } from "@emotion/react";
 
 type Props = {
   slides: Array<JSX.Element>;
@@ -94,7 +96,15 @@ export default function FixedSlider({
 
   return (
     <div className={`${styles["fixed-slider"]}`} ref={slideRef}>
-      <div className={`${styles["fixed-slider__body"]}`}>
+      <div
+        className={`${styles["fixed-slider__body"]}`}
+        css={css`
+          ${responsiveCSS(
+            "padding-bottom",
+            `${(() => window.innerHeight)()}px`
+          )}
+        `}
+      >
         {slides.map((s, idx) => {
           const stateElement = cloneElement(
             s ?? <React.Fragment key={idx}></React.Fragment>,
