@@ -25,15 +25,28 @@ export default function Home() {
         </div>
         <div className={styles.grid}>
           <Link
-            href="/gimmik/fixedSlide"
+            href="/gimmik/fixedPresentation"
             className={styles.card}
             target="_self"
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              固定スクロールスライド <span>-&gt;</span>
+              固定スクロールプレゼンテーション <span>-&gt;</span>
             </h2>
             <p className={inter.className}>強く見せたい項目に</p>
+          </Link>
+          <Link
+            href="/gimmik/fixedSlider"
+            className={styles.card}
+            target="_self"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              固定スクロールスライダー <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>
+              Appleのサイトの様なスクロール量に合わせた動きを見せたい時に
+            </p>
           </Link>
         </div>
         <div className={styles.description}>
