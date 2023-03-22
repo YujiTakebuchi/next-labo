@@ -6,9 +6,8 @@ import { css } from "@emotion/react";
 import styles from "./FixedSliderSlide01.module.scss";
 
 type Props = {
-  progress: number;
+  progress: number | undefined;
   fixedStyleObjectList: Array<string>;
-  slidesLength: number;
   color: string;
 };
 export default function FixedSliderSlide01({

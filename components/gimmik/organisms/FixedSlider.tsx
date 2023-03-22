@@ -3,29 +3,37 @@
 // 固定スクロールアニメーションのスライド管理用コンポーネント
 /*===================================*/
 import styles from "./FixedSlider.module.scss";
-import React, { cloneElement, useEffect, useRef, useState } from "react";
+import React, {
+  cloneElement,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   attachScrollEventListener,
   detachScrollEventListener,
+  responsiveCSS,
 } from "../../../features/util";
 import FixedSlide from "../molecules/FixedSlide";
+import { css } from "@emotion/react";
+import { useWindowSize } from "@/hooks/windowHooks";
 
 type Props = {
   slides: Array<JSX.Element>;
-  isInFixedArea: boolean;
-  scrollAmount: number;
-  children: JSX.Element;
+  isInFixedArea: boolean | undefined;
+  scrollAmount: number | undefined;
 };
 
 export default function FixedSlider({
   slides = [<></>],
   isInFixedArea = false,
   scrollAmount = 0,
-  children,
 }: Props) {
   const [progress, setProgress] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef<HTMLDivElement | null>(null);
+  const [width, height] = useWindowSize();
   useEffect(() => {
     if (slideRef.current !== null) {
       // 変数
@@ -96,32 +104,39 @@ export default function FixedSlider({
 
   return (
     <div className={`${styles["fixed-slider"]}`} ref={slideRef}>
-      <div className={`${styles["fixed-slider__body"]}`}>
-        {slides.map((s, idx) => {
-          const stateElement = cloneElement(
-            s ?? <React.Fragment key={idx}></React.Fragment>,
-            {
-              progress,
-            }
-          );
-          return (
-            <FixedSlide key={idx} isDisplayed={idx === currentSlide}>
-              {stateElement}
-            </FixedSlide>
-          );
-        })}
+      <div className={`${styles["fixed-slider--content"]}`}>
+        <div
+          className={`${styles["fixed-slider--content__body"]}`}
+          css={css`
+            ${responsiveCSS("padding-bottom", `${height ?? 0}px`)}
+          `}
+        >
+          {slides.map((s, idx) => {
+            const stateElement = cloneElement(
+              s ?? <React.Fragment key={idx}></React.Fragment>,
+              {
+                progress,
+              }
+            );
+            return (
+              <FixedSlide key={idx} isDisplayed={idx === currentSlide}>
+                {stateElement}
+              </FixedSlide>
+            );
+          })}
+        </div>
+        <nav className={`${styles["fixed-slider--content__nav"]}`}>
+          {slides.map((s, idx) => {
+            return (
+              <button
+                key={idx}
+                className={`${currentSlide === idx ? styles["selected"] : ""}`}
+                onClick={() => handleNavClick(idx)}
+              ></button>
+            );
+          })}
+        </nav>
       </div>
-      <nav className={`${styles["fixed-slider__nav"]}`}>
-        {slides.map((s, idx) => {
-          return (
-            <button
-              key={idx}
-              className={`${currentSlide === idx ? styles["selected"] : ""}`}
-              onClick={() => handleNavClick(idx)}
-            ></button>
-          );
-        })}
-      </nav>
     </div>
   );
 }

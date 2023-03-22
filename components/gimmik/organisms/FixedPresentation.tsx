@@ -9,7 +9,7 @@ import FixedSliderController from "./FixedSliderController";
 
 type FixedPresentationProps = {
   slides: Array<JSX.Element>;
-  isInFixedArea: boolean;
+  isInFixedArea: boolean | undefined;
 };
 
 /**
