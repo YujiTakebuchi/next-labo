@@ -1,0 +1,21 @@
+/*===================================*/
+// Tiles module styles
+// タイル形式のコンポーネントを含むモジュールのスタイル
+/*===================================*/
+@use "../../styles/var.module";
+
+.check-tile {
+  position: relative;
+  &--content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__tp-lf,
+    &__bt-rt {
+      background-color: black;
+    }
+    &__tp-rt,
+    &__bt-lf {
+      background-color: white;
+    }
+  }
+}
