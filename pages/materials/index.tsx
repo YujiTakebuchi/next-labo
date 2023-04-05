@@ -46,6 +46,24 @@ export default function Home() {
             ]}
           />
         </div>
+        <div>
+          <h3>PC, SP, Tabスタイル & 各アスペクトレシオ設定</h3>
+          <CheckTile
+            sizeStyleList={[
+              { maxWidth: undefined, size: "360px", aspectRatio: 16 / 9 },
+              {
+                maxWidth: parseInt(variable.breakpointPC),
+                size: "240px",
+                aspectRatio: 4 / 3,
+              },
+              {
+                maxWidth: parseInt(variable.breakpoint),
+                size: "120px",
+                aspectRatio: 2 / 1,
+              },
+            ]}
+          />
+        </div>
       </div>
     </>
   );
