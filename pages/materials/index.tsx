@@ -1,5 +1,6 @@
 import variable from "../../styles/var.module.scss";
 import { CheckTile } from "@/components/material/atomic/Tiles";
+import { CheckTileFillVertical } from "@/components/material/styled/TilesVertical";
 
 export default function Home() {
   return (
@@ -63,6 +64,9 @@ export default function Home() {
               },
             ]}
           />
+        </div>
+        <div>
+          <CheckTileFillVertical />
         </div>
       </div>
     </>
