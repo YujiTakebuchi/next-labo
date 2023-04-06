@@ -1,5 +1,5 @@
 import variable from "../../styles/var.module.scss";
-import { CheckTile } from "@/components/material/Tiles";
+import { CheckTile } from "@/components/material/atomic/Tiles";
 
 export default function Home() {
   return (
