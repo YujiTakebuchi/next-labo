@@ -12,28 +12,11 @@ export default function Home() {
     responsiveCSS("width", "100%", "100%"),
   ];
   const slides = [
-    <div
-      css={css`
-        position: relative;
-        height: 100%;
-      `}
-    >
-      <div
-        css={css`
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-        `}
-      >
-        <CheckTileFillVertical />
-      </div>
-      <FormulaCar
-        key={"s1"}
-        progress={undefined}
-        fixedStyleObjectList={slideStyleList}
-      />
-    </div>,
+    <FormulaCar
+      key={"s1"}
+      progress={undefined}
+      fixedStyleObjectList={slideStyleList}
+    />,
     <FormulaCar
       key={"s2"}
       progress={undefined}
