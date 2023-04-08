@@ -1,6 +1,7 @@
 import FormulaCar from "@/components/gimmik/fixedSlide/FormulaCar";
 import FixOnAvailable from "@/components/gimmik/FixOnAvailable";
 import FixedSlider from "@/components/gimmik/organisms/FixedSlider";
+import { CheckTileFillVertical } from "@/components/material/styled/TilesVertical";
 import { responsiveCSS } from "@/features/util";
 import { useWindowSize } from "@/hooks/windowHooks";
 import { css } from "@emotion/react";
@@ -11,11 +12,28 @@ export default function Home() {
     responsiveCSS("width", "100%", "100%"),
   ];
   const slides = [
-    <FormulaCar
-      key={"s1"}
-      progress={undefined}
-      fixedStyleObjectList={slideStyleList}
-    />,
+    <div
+      css={css`
+        position: relative;
+        height: 100%;
+      `}
+    >
+      <div
+        css={css`
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        `}
+      >
+        <CheckTileFillVertical />
+      </div>
+      <FormulaCar
+        key={"s1"}
+        progress={undefined}
+        fixedStyleObjectList={slideStyleList}
+      />
+    </div>,
     <FormulaCar
       key={"s2"}
       progress={undefined}
