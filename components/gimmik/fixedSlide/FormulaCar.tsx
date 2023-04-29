@@ -2,6 +2,7 @@
 // FormulaCar COMP
 // 固定スクロールアニメーションのアニメーションコンポーネント01
 /*===================================*/
+import { CheckTileFillVertical } from "@/components/material/styled/TilesVertical";
 import { css } from "@emotion/react";
 import styles from "./FormulaCar.module.scss";
 
@@ -21,6 +22,16 @@ export default function FormulaCar({
         ${fixedStyleObjectList.map((so) => so)}
       `}
     >
+      <div
+        css={css`
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        `}
+      >
+        <CheckTileFillVertical />
+      </div>
       <span
         className={`${styles["formula-car--content"]}`}
         style={{ left: `${100 - (progress ?? 0)}%` }}

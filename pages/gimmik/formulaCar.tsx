@@ -1,6 +1,7 @@
 import FormulaCar from "@/components/gimmik/fixedSlide/FormulaCar";
 import FixOnAvailable from "@/components/gimmik/FixOnAvailable";
 import FixedSlider from "@/components/gimmik/organisms/FixedSlider";
+import { CheckTileFillVertical } from "@/components/material/styled/TilesVertical";
 import { responsiveCSS } from "@/features/util";
 import { useWindowSize } from "@/hooks/windowHooks";
 import { css } from "@emotion/react";
